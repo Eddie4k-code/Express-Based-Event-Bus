@@ -1,66 +1,47 @@
+# Express Event Bus Demo
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express Event Bus Demo</title>
-</head>
-<body>
-    <h1>Express Event Bus Demo</h1>
+This project demonstrates an event-driven architecture using an Express-based event bus. It consists of several microservices:
 
-    <p>This project demonstrates an event-driven architecture using an Express-based event bus. It consists of several microservices:</p>
+- **Posts Service:** Responsible for managing posts.
+- **Query Service:** Handles queries related to posts.
+- **Comments Service:** Manages comments on posts.
+- **Event-Broker Service:** Distributes events among other services.
 
-    <ul>
-        <li><strong>Posts Service:</strong> Responsible for managing posts.</li>
-        <li><strong>Query Service:</strong> Handles queries related to posts.</li>
-        <li><strong>Comments Service:</strong> Manages comments on posts.</li>
-        <li><strong>Event-Broker Service:</strong> Distributes events among other services.</li>
-    </ul>
+The Event Broker distributes events to other services, and all other services post events to the Event Broker.
 
-    <p>The Event Broker distributes events to other services, and all other services post events to the Event Broker.</p>
+## Prerequisites
 
-    <h2>Prerequisites</h2>
+- Kubernetes installed on your system.
+- Terraform installed on your system.
 
-    <ul>
-        <li>Kubernetes installed on your system.</li>
-        <li>Terraform installed on your system.</li>
-    </ul>
+## Getting Started
 
-    <h2>Getting Started</h2>
+1. Clone this repository.
+2. Ensure you have a Kubernetes installed and Terraform installed.
+3. Run `make apply` to install the Ingress-Nginx controller and provision all Kubernetes manifests for the services.
+4. Access the services through the Ingress controller.
 
-    <ol>
-        <li>Clone this repository.</li>
-        <li>Ensure you have a Kubernetes installed and Terraform installed.</li>
-        <li>Run <code>make apply</code> to install the Ingress-Nginx controller and provision all Kubernetes manifests for the services.</li>
-        <li>Access the services through the Ingress controller.</li>
-    </ol>
+## Usage
 
-    <h2>Usage</h2>
+### `make apply`
 
-    <h3><code>make apply</code></h3>
+This command will install the Ingress-Nginx controller and provision all Kubernetes manifests for the services.
 
-    <p>This command will install the Ingress-Nginx controller and provision all Kubernetes manifests for the services.</p>
+### `make destroy`
 
-    <h3><code>make destroy</code></h3>
+This command will destroy all Kubernetes-related infrastructure provisioned by Terraform.
 
-    <p>This command will destroy all Kubernetes-related infrastructure provisioned by Terraform.</p>
+## Services
 
-    <h2>Services</h2>
+- **Posts Service:** Manages posts.
+- **Query Service:** Handles queries related to posts.
+- **Comments Service:** Manages comments on posts.
+- **Event-Broker Service:** Distributes events among other services.
 
-    <ul>
-        <li><strong>Posts Service:</strong> Manages posts.</li>
-        <li><strong>Query Service:</strong> Handles queries related to posts.</li>
-        <li><strong>Comments Service:</strong> Manages comments on posts.</li>
-        <li><strong>Event-Broker Service:</strong> Distributes events among other services.</li>
-    </ul>
+## Project Structure
 
-    <h2>Project Structure</h2>
-
-    <ul>
-        <li><code>/post-service</code>: Contains the Posts Service.</li>
-        <li><code>/query-service</code>: Contains the Query Service.</li>
-        <li><code>/comments-service</code>: Contains the Comments Service.</li>
-        <li><code>/event-broker</code>: Contains the Event Broker Service.</li>
-        <li><code>/terraform</code>: Contains Terraform configurations for Kubernetes infrastructure provisioning.</li>
-    </ul>
-</body>
-
+- `/post-service`: Contains the Posts Service.
+- `/query-service`: Contains the Query Service.
+- `/comments-service`: Contains the Comments Service.
+- `/event-broker`: Contains the Event Broker Service.
+- `/terraform`: Contains Terraform configurations for Kubernetes infrastructure provisioning.
