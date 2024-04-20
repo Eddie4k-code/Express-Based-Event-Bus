@@ -38,6 +38,11 @@ This command will destroy all Kubernetes-related infrastructure provisioned by T
 - **Comments Service:** Manages comments on posts.
 - **Event-Broker Service:** Distributes events among other services.
 
+## Nginx Routes
+- **localhost/posts/create:** Reaches the post-service to create a new post
+- **localhost/posts:** Reaches the query-service to query posts
+- **localhost/posts/comments:** Reaches the comment-service for creating comments
+
 ## Project Structure
 
 - `/post-service`: Contains the Posts Service.
