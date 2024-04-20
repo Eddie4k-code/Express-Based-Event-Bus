@@ -21,9 +21,9 @@ app.post("/events", async (req: Request, res: Response) => {
         console.log("Received event...", event);
         
         /* Emit the events to other services */
-        await axios.post('http://localhost:4000/events', event);
-        await axios.post('http://localhost:4001/events', event);
-        await axios.post('http://localhost:4003/events', event);
+        await axios.post('http://posts-cluster-ip-srv:4000/events', event);
+        await axios.post('http://comments-cluster-ip-srv:4001/events', event);
+        await axios.post('http://query-cluster-ip-srv:4003/events', event);
 
         res.send({"status": 'OK'});
     } catch(err: any) {

@@ -48,7 +48,8 @@ app.post("/posts", async (req: Request, res: Response) => {
             data: posts[id]
         }
 
-        await axios.post('http://localhost:4005/events', event);
+        // Send post created event to event bus
+        await axios.post('http://event-broker-srv:4005/events', event);
 
 
 

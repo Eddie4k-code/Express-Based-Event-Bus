@@ -61,7 +61,7 @@ app.post("/posts/:id/comments", async (req: Request, res: Response) => {
 
         /* Notify the event bus of this event */
 
-        await axios.post("http://localhost:4005/events", event);
+        await axios.post("http://event-broker-srv/events", event);
 
 
         return res.status(200).json(comments);
