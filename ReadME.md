@@ -50,3 +50,4 @@ This command will destroy all Kubernetes-related infrastructure provisioned by T
 - `/comments-service`: Contains the Comments Service.
 - `/event-broker`: Contains the Event Broker Service.
 - `/terraform`: Contains Terraform configurations for Kubernetes infrastructure provisioning.
+
