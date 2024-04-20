@@ -1,6 +1,6 @@
 #Event-Broker Service Deployment
 resource "kubectl_manifest" "event-broker" {
-    yaml_body = <<YAML
+  yaml_body = <<YAML
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,7 +22,7 @@ YAML
 }
 
 resource "kubectl_manifest" "event-broker-service" {
-    yaml_body = <<YAML
+  yaml_body = <<YAML
 apiVersion: v1
 kind: Service
 metadata:

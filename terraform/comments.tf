@@ -1,6 +1,6 @@
 #Comment Service Deployment
 resource "kubectl_manifest" "comments" {
-    yaml_body = <<YAML
+  yaml_body = <<YAML
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,7 +22,7 @@ YAML
 }
 
 resource "kubectl_manifest" "comments-service" {
-    yaml_body = <<YAML
+  yaml_body = <<YAML
 apiVersion: v1
 kind: Service
 metadata:

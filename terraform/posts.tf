@@ -1,6 +1,6 @@
 #Posts Service Deployment and NodePort Definition.
 resource "kubectl_manifest" "posts" {
-    yaml_body = <<YAML
+  yaml_body = <<YAML
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,7 +22,7 @@ YAML
 }
 
 resource "kubectl_manifest" "posts-srv" {
-    yaml_body = <<YAML
+  yaml_body = <<YAML
 apiVersion: v1
 kind: Service
 metadata:
