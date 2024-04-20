@@ -8,6 +8,6 @@ apply:
 	
 #destorys all kubernetes infrastructure
 destroy:
-	@cd $(CURDIR)/terraform && terraform init && terraform destory --auto-aprove
+	@cd $(CURDIR)/terraform && terraform init && terraform destroy --auto-approve
 
 
